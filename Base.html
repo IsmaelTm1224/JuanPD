@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Juan Pablo Duarte – Padre de la Patria Dominicana</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/feather-icons"></script>
+  <script src="https://unpkg.com/scrollreveal"></script>
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth;
+    }
+    .glass {
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(14px);
+    }
+    .card {
+      background: rgba(255,255,255,0.1);
+      border-radius: 1.5rem;
+      padding: 2rem;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+      border: 1px solid rgba(255,255,255,0.1);
+      transition: all 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-10px);
+      background: rgba(255,255,255,0.2);
+    }
+
+    /* ESTILOS GALERÍA DINÁMICA */
+    .img-container {
+      perspective: 1000px;
+    }
+    .img-box {
+      border: 4px dashed rgba(255,255,255,0.4);
+      border-radius: 1.5rem;
+      height: 280px;
+      overflow: hidden;
+      position: relative;
+      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .img-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+    /* Efecto al pasar el cursor por el contenedor */
+    .img-container:hover .img-box {
+      transform: scale(1.05) rotateZ(2deg);
+      border: 4px solid #ef4444;
+      box-shadow: 0 25px 50px rgba(239, 68, 68, 0.3);
+    }
+    .img-container:hover img {
+      transform: scale(1.1);
+    }
+
+    .timeline-item {
+        border-left: 4px solid #ef4444;
+        padding-left: 1.5rem;
+        margin-bottom: 2rem;
+        position: relative;
+    }
+    .timeline-item::before {
+        content: '';
+        position: absolute;
+        left: -11px;
+        top: 0;
+        width: 18px;
+        height: 18px;
+        background: #3b82f6;
+        border-radius: 50%;
+    }
+
+    /* FONDO EN MOVIMIENTO DINÁMICO */
+    .animated-bg {
+      background: linear-gradient(-45deg, #002d62, #ce1126, #002d62, #0a0a0a);
+      background-size: 400% 400%;
+      animation: gradientBG 20s ease infinite;
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+  </style>
+</head>
+
+<body class="text-white overflow-x-hidden">
+
+<div class="animated-bg"></div>
+
+<nav class="fixed top-0 w-full z-50 glass shadow-lg">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+    <h1 class="text-2xl font-extrabold tracking-wide flex items-center gap-2">
+        <i data-feather="star" class="text-yellow-400"></i> Duarte Vive
+    </h1>
+    <ul class="hidden md:flex gap-6 font-semibold">
+      <li><a href="#inicio" class="hover:text-red-400 transition">Inicio</a></li>
+      <li><a href="#biografia" class="hover:text-red-400 transition">Vida</a></li>
+      <li><a href="#trinitaria" class="hover:text-red-400 transition">La Trinitaria</a></li>
+      <li><a href="#himno" class="hover:text-red-400 transition">Himno</a></li>
+      <li><a href="#pensamientos" class="hover:text-red-400 transition">Ideario</a></li>
+      <li><a href="#video" class="hover:text-red-400 transition">Video</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section id="inicio" class="min-h-screen flex items-center justify-center text-center px-6 pt-20">
+  <div class="max-w-5xl glass p-12 rounded-3xl">
+    <h2 class="text-6xl md:text-8xl font-black mb-8">Juan Pablo Duarte</h2>
+    <p class="text-xl md:text-2xl opacity-90 mb-6 font-light">"Padre de la Patria y Fundador de la República Dominicana"</p>
+    <div class="w-24 h-1 bg-red-600 mx-auto mb-6"></div>
+    <p class="italic opacity-80 text-2xl">"Vivir sin patria es lo mismo que vivir sin honor."</p>
+  </div>
+</section>
+
+<section id="biografia" class="py-24 px-6">
+    <div class="max-w-6xl mx-auto">
+        <h2 class="text-5xl font-extrabold mb-10 text-center">Biografía y Formación</h2>
+        <div class="grid md:grid-cols-2 gap-12 items-start">
+            <div class="space-y-6">
+                <div class="card">
+                    <h3 class="text-2xl font-bold mb-3 text-blue-400">Origen y Familia</h3>
+                    <p class="opacity-90">Nace el 26 de enero de 1813. Hijo de Juan José Duarte, comerciante español, y Manuela Díez Jiménez, oriunda de El Seibo. Su hogar fue un ejemplo de valores morales y patriotismo en una época de gran inestabilidad política.</p>
+                </div>
+                <div class="card">
+                    <h3 class="text-2xl font-bold mb-3 text-red-400">Viaje que lo cambió todo</h3>
+                    <p class="opacity-90">A los 15 años viaja a Nueva York, Inglaterra, Francia y España. Al ser preguntado por el capitán del barco sobre su origen, sintió vergüenza de no tener una patria libre. Este sentimiento encendió su llama revolucionaria.</p>
+                </div>
+            </div>
+            <div class="card h-full bg-white/5">
+                <h3 class="text-2xl font-bold mb-4 flex items-center gap-2"><i data-feather="book-open"></i> Su Obra Social</h3>
+                <p class="mb-4">Duarte no solo fue un guerrero, fue un educador. Creó un movimiento cultural que utilizaba el teatro para despertar la conciencia del pueblo. Para él, **"La nación dominicana es la reunión de todos los dominicanos libres"**.</p>
+                <ul class="space-y-4">
+                    <li class="flex gap-3"><i data-feather="check-circle" class="text-green-400"></i> Donó toda su herencia a la causa.</li>
+                    <li class="flex gap-3"><i data-feather="check-circle" class="text-green-400"></i> Introdujo ideas de democracia moderna.</li>
+                    <li class="flex gap-3"><i data-feather="check-circle" class="text-green-400"></i> Rechazó la presidencia para evitar dictaduras.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="trinitaria" class="py-24 px-6 bg-black/30">
+    <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="text-5xl font-extrabold mb-4 text-red-500">La Sociedad Secreta La Trinitaria</h2>
+            <p class="text-xl opacity-80">El 16 de julio de 1838, en casa de Doña Chepita Pérez, nació el motor de la libertad.</p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8 text-center">
+            <div class="p-6 glass rounded-2xl">
+                <div class="bg-blue-600 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 font-bold">1</div>
+                <h4 class="text-xl font-bold mb-2">El Juramento</h4>
+                <p class="text-sm">Se juramentaron con sangre bajo la protección de Dios para separar la parte este de la isla de la ocupación haitiana.</p>
+            </div>
+            <div class="p-6 glass rounded-2xl border-x border-red-500/30">
+                <div class="bg-white text-blue-900 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 font-bold">2</div>
+                <h4 class="text-xl font-bold mb-2">Los Fundadores</h4>
+                <p class="text-sm">Duarte, Juan Isidro Pérez, Pedro Alejandro Pina, Félix María Ruiz, Benito González, Juan Nepomuceno Ravelo, entre otros.</p>
+            </div>
+            <div class="p-6 glass rounded-2xl">
+                <div class="bg-red-600 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 font-bold">3</div>
+                <h4 class="text-xl font-bold mb-2">Los Colores</h4>
+                <p class="text-sm">Duarte diseñó la bandera: Azul (libertad), Rojo (sangre de los héroes) y Blanco (paz y unión).</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="himno" class="py-24 px-6 bg-blue-900/40 border-y border-white/5">
+    <div class="max-w-5xl mx-auto">
+        <h2 class="text-5xl font-extrabold mb-10 text-center">Himno a Juan Pablo Duarte (Completo)</h2>
+        <div class="grid md:grid-cols-2 gap-10">
+            <div class="glass p-8 rounded-2xl text-center leading-relaxed italic border border-white/20 max-h-[500px] overflow-y-auto custom-scrollbar">
+                <p class="mb-6"><strong>I</strong><br>En la fragua del honor y del deber,<br>donde el alma templó su gran virtud,<br>Juan Pablo Duarte nos vino a enseñar<br>lo que vale una patria en su juventud.</p>
+                <p class="mb-6 font-bold text-yellow-400"><strong>Coro</strong><br>¡Gloria a Duarte! que el nombre nos dio,<br>¡Gloria a Duarte! que el pecho encendió,<br>en el fuego sagrado de la libertad,<br>que en febrero en la patria brilló.</p>
+                <p class="mb-6"><strong>II</strong><br>Él trazó con su fe y su ideal,<br>el camino de la redención,<br>y en la cruz de la enseña nacional,<br>puso el sello de su corazón.</p>
+                <p class="mb-6"><strong>III</strong><br>No fue el oro que da el resplandor,<br>ni el orgullo que busca el altar,<br>fue su vida un ejemplo de amor,<br>fue su meta la patria salvar.</p>
+                <p class="mb-6"><strong>IV</strong><br>Dominicanos, seguid su lección,<br>de justicia, de paz y de honor,<br>que en cada pecho viva su acción,<br>y en cada alma su fe y su fervor.</p>
+            </div>
+            <div class="flex flex-col justify-center">
+                <h3 class="text-3xl font-bold mb-4">Análisis del Himno</h3>
+                <p class="mb-4 opacity-90 text-lg">Letra de <strong>Ramón Emilio Jiménez</strong> y música de <strong>José de Jesús Ravelo</strong>.</p>
+                <ul class="space-y-4">
+                    <li class="bg-white/5 p-4 rounded-lg italic border-l-4 border-blue-500">"La fragua del honor": Se refiere al proceso de forjar el carácter nacional mediante el sacrificio.</li>
+                    <li class="bg-white/5 p-4 rounded-lg italic border-l-4 border-red-500">"Trazó con su fe": Destaca que la independencia no fue un accidente, sino un plan intelectual diseñado por Duarte.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="pensamientos" class="py-24 px-6">
+    <div class="max-w-7xl mx-auto">
+        <h2 class="text-5xl font-extrabold mb-14 text-center">Ideario y Pensamientos</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="card">
+                <p class="text-xl italic">"Nuestra Patria ha de ser libre e independiente de toda potencia extranjera o se hunde la isla."</p>
+                <p class="mt-4 text-sm text-yellow-400 font-bold">— Sobre la Soberanía</p>
+            </div>
+            <div class="card">
+                <p class="text-xl italic">"Sed justos lo primero, si queréis ser felices; ese es el primer deber del hombre."</p>
+                <p class="mt-4 text-sm text-yellow-400 font-bold">— Sobre la Ética</p>
+            </div>
+            <div class="card">
+                <p class="text-xl italic">"Toda ley no establecida por el pueblo es nula; la ley es la voluntad de la nación."</p>
+                <p class="mt-4 text-sm text-yellow-400 font-bold">— Sobre la Democracia</p>
+            </div>
+            <div class="card">
+                <p class="text-xl italic">"El Gobierno debe mostrarse justo y enérgico... o no habrá libertad."</p>
+                <p class="mt-4 text-sm text-yellow-400 font-bold">— Sobre el Orden</p>
+            </div>
+            <div class="card">
+                <p class="text-xl italic">"Los blancos, morenos, cobrizos, unidos y osados, la patria salvemos de viles tiranos."</p>
+                <p class="mt-4 text-sm text-yellow-400 font-bold">— Sobre la Unidad Nacional</p>
+            </div>
+            <div class="card">
+                <p class="text-xl italic">"La política no es especulación; es la ciencia más pura después de la Filosofía."</p>
+                <p class="mt-4 text-sm text-yellow-400 font-bold">— Sobre la Nobleza Política</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="imagenes" class="py-24 px-6 bg-black/20">
+  <div class="max-w-7xl mx-auto text-center">
+    <h2 class="text-5xl font-extrabold mb-14">Galería Educativa</h2>
+    <div class="grid md:grid-cols-3 gap-10">
+      
+      <div class="img-container group">
+        <div class="img-box">
+          <img src="c:\Users\Ismael J\Desktop\JPD\Juan-Pablo-Duarte.jpg" alt="Retrato de Juan Pablo Duarte">
+          <div class="absolute inset-0 bg-black/70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 p-6">
+            <p class="text-white font-bold text-lg">Retrato de Juan Pablo Duarte</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="img-container group">
+        <div class="img-box">
+          <img src="c:\Users\Ismael J\Desktop\JPD\Bandera.jpg" alt="La Bandera Dominicana">
+          <div class="absolute inset-0 bg-black/70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 p-6">
+            <p class="text-white font-bold text-lg">La Bandera Dominicana</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="img-container group">
+        <div class="img-box">
+          <img src="c:\Users\Ismael J\Desktop\JPD\Estatua.jpg" alt="Estatua del Patricio">
+          <div class="absolute inset-0 bg-black/70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 p-6">
+            <p class="text-white font-bold text-lg">Estatua del Patricio</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="img-container group">
+        <div class="img-box">
+          <img src="c:\Users\Ismael J\Desktop\JPD\Mapa.jpg" alt="Mapa de la Isla">
+          <div class="absolute inset-0 bg-black/70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 p-6">
+            <p class="text-white font-bold text-lg">Mapa de la Isla</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="img-container group">
+        <div class="img-box">
+          <img src="c:\Users\Ismael J\Desktop\JPD\Duarte tumba.jpg" alt="Tumba de Duarte">
+          <div class="absolute inset-0 bg-black/70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 p-6">
+            <p class="text-white font-bold text-lg">Tumba de Duarte</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="img-container group">
+        <div class="img-box">
+          <img src="c:\Users\Ismael J\Desktop\JPD\Altar_de_la_Patria_CCSD_09_2018_1606.jpg" alt="Altar de la Patria">
+          <div class="absolute inset-0 bg-black/70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 p-6">
+            <p class="text-white font-bold text-lg">Altar de la Patria</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="linea" class="py-24 px-6 bg-white/5">
+    <div class="max-w-4xl mx-auto">
+        <h2 class="text-5xl font-extrabold mb-14 text-center">Hitos Históricos</h2>
+        <div class="timeline-item">
+            <h4 class="text-xl font-bold text-blue-400">1838 - La Trinitaria</h4>
+            <p>Se funda la base ideológica de la República Dominicana.</p>
+        </div>
+        <div class="timeline-item">
+            <h4 class="text-xl font-bold text-yellow-400">1844 - 27 de Febrero</h4>
+            <p>Se dispara el trabucazo en la Puerta del Conde. ¡Nace la Nación!</p>
+        </div>
+        <div class="timeline-item">
+            <h4 class="text-xl font-bold text-red-400">1876 - Caracas</h4>
+            <p>Duarte muere el 15 de julio, pero su legado vive en cada dominicano.</p>
+        </div>
+    </div>
+</section>
+
+<section id="video" class="py-24 px-6 text-center">
+  <div class="max-w-5xl mx-auto">
+    <h2 class="text-5xl font-extrabold mb-10">Documental Educativo</h2>
+    <div class="aspect-video rounded-3xl overflow-hidden shadow-2xl border-4 border-white/20">
+      <iframe class="w-full h-full" src="c:\Users\Ismael J\Desktop\JPD\YTDown.com_YouTube_01-Lo-que-motivo-a-Juan-Pablo-Duarte-a-l_Media_kpHaP0xPO1U_001_1080p.mp4" title="Duarte" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+<footer class="py-10 text-center glass border-t border-white/10">
+  <p class="opacity-80">© 2026 – Portal Educativo Juan Pablo Duarte | Jery Caba, Reybel Beras, Israel Tusent y Josting Medina</p>
+  <p class="text-sm mt-2 font-light">"Dios, Patria y Libertad"</p>
+</footer>
+
+<script>
+  feather.replace();
+  ScrollReveal().reveal('section', {
+    distance: '80px',
+    duration: 1200,
+    origin: 'bottom',
+    interval: 150,
+    opacity: 0,
+    easing: 'ease-in-out'
+  });
+</script>
+
+</body>
+</html>
