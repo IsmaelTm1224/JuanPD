@@ -32,6 +32,22 @@
       background: rgba(255,255,255,0.2);
     }
 
+    /* IMAGEN DE FONDO 16:9 PRINCIPAL */
+    .hero-bg-image {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      /* Reemplaza la ruta de abajo con tu imagen 16:9 */
+      background: linear-gradient(rgba(0, 45, 98, 0.7), rgba(10, 10, 10, 0.8)), 
+                  url('Juan-Pablo-Duarte-padre-de-la-patria.jpg'); 
+      background-size: cover;
+      background-position: center;
+      z-index: -2;
+      filter: brightness(0.6);
+    }
+
     /* ESTILOS GALERÍA DINÁMICA */
     .img-container {
       perspective: 1000px;
@@ -50,7 +66,6 @@
       object-fit: cover;
       transition: transform 0.6s ease;
     }
-    /* Efecto al pasar el cursor por el contenedor */
     .img-container:hover .img-box {
       transform: scale(1.05) rotateZ(2deg);
       border: 4px solid #ef4444;
@@ -88,6 +103,7 @@
       top: 0;
       left: 0;
       z-index: -1;
+      opacity: 0.5; /* Reducido para que se vea la imagen de fondo */
     }
 
     @keyframes gradientBG {
@@ -95,12 +111,28 @@
       50% { background-position: 100% 50%; }
       100% { background-position: 0% 50%; }
     }
+
+    /* BOTÓN IR ARRIBA */
+    #scrollToTop {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      display: none;
+      z-index: 100;
+      cursor: pointer;
+      transition: 0.3s;
+    }
   </style>
 </head>
 
 <body class="text-white overflow-x-hidden">
 
+<div class="hero-bg-image"></div>
 <div class="animated-bg"></div>
+
+<button id="scrollToTop" class="bg-red-600 hover:bg-blue-600 p-4 rounded-full shadow-2xl transition-all scale-100 hover:scale-110">
+    <i data-feather="arrow-up"></i>
+</button>
 
 <nav class="fixed top-0 w-full z-50 glass shadow-lg">
   <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
@@ -118,12 +150,16 @@
   </div>
 </nav>
 
-<section id="inicio" class="min-h-screen flex items-center justify-center text-center px-6 pt-20">
+<section id="inicio" class="min-h-screen flex flex-col items-center justify-center text-center px-6 pt-20">
   <div class="max-w-5xl glass p-12 rounded-3xl">
     <h2 class="text-6xl md:text-8xl font-black mb-8">Juan Pablo Duarte</h2>
     <p class="text-xl md:text-2xl opacity-90 mb-6 font-light">"Padre de la Patria y Fundador de la República Dominicana"</p>
     <div class="w-24 h-1 bg-red-600 mx-auto mb-6"></div>
-    <p class="italic opacity-80 text-2xl">"Vivir sin patria es lo mismo que vivir sin honor."</p>
+    <p class="italic opacity-80 text-2xl mb-8">"Vivir sin patria es lo mismo que vivir sin honor."</p>
+    
+    <div class="bg-black/40 inline-block px-6 py-3 rounded-full border border-yellow-400/50">
+        <span id="countdown" class="font-bold text-yellow-400">Cargando fecha...</span>
+    </div>
   </div>
 </section>
 
@@ -242,7 +278,7 @@
       
       <div class="img-container group">
         <div class="img-box">
-          <img src="Juan-Pablo-Duarte.jpg" alt="Retrato de Juan Pablo Duarte">
+          <img src="c:\Users\Ismael J\Desktop\JPD\Juan-Pablo-Duarte.jpg" alt="Retrato de Juan Pablo Duarte">
           <div class="absolute inset-0 bg-black/70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 p-6">
             <p class="text-white font-bold text-lg">Retrato de Juan Pablo Duarte</p>
           </div>
@@ -251,7 +287,7 @@
 
       <div class="img-container group">
         <div class="img-box">
-          <img src="Bandera.jpg" alt="La Bandera Dominicana">
+          <img src="c:\Users\Ismael J\Desktop\JPD\Bandera.jpg" alt="La Bandera Dominicana">
           <div class="absolute inset-0 bg-black/70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 p-6">
             <p class="text-white font-bold text-lg">La Bandera Dominicana</p>
           </div>
@@ -260,7 +296,7 @@
 
       <div class="img-container group">
         <div class="img-box">
-          <img src="Estatua.jpg" alt="Estatua del Patricio">
+          <img src="c:\Users\Ismael J\Desktop\JPD\Estatua.jpg" alt="Estatua del Patricio">
           <div class="absolute inset-0 bg-black/70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 p-6">
             <p class="text-white font-bold text-lg">Estatua del Patricio</p>
           </div>
@@ -269,7 +305,7 @@
 
       <div class="img-container group">
         <div class="img-box">
-          <img src="Mapa.jpg" alt="Mapa de la Isla">
+          <img src="c:\Users\Ismael J\Desktop\JPD\Mapa.jpg" alt="Mapa de la Isla">
           <div class="absolute inset-0 bg-black/70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 p-6">
             <p class="text-white font-bold text-lg">Mapa de la Isla</p>
           </div>
@@ -278,7 +314,7 @@
 
       <div class="img-container group">
         <div class="img-box">
-          <img src="Duarte tumba.jpg" alt="Tumba de Duarte">
+          <img src="c:\Users\Ismael J\Desktop\JPD\Duarte tumba.jpg" alt="Tumba de Duarte">
           <div class="absolute inset-0 bg-black/70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 p-6">
             <p class="text-white font-bold text-lg">Tumba de Duarte</p>
           </div>
@@ -287,7 +323,7 @@
 
       <div class="img-container group">
         <div class="img-box">
-          <img src="Altar_de_la_Patria_CCSD_09_2018_1606.jpg" alt="Altar de la Patria">
+          <img src="c:\Users\Ismael J\Desktop\JPD\Altar_de_la_Patria_CCSD_09_2018_1606.jpg" alt="Altar de la Patria">
           <div class="absolute inset-0 bg-black/70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 p-6">
             <p class="text-white font-bold text-lg">Altar de la Patria</p>
           </div>
@@ -318,9 +354,9 @@
 
 <section id="video" class="py-24 px-6 text-center">
   <div class="max-w-5xl mx-auto">
-    <h2 class="text-5xl font-extrabold mb-10">Descubre Más Sobre Juan Pablo Duarte</h2>
+    <h2 class="text-5xl font-extrabold mb-10">Documental Educativo</h2>
     <div class="aspect-video rounded-3xl overflow-hidden shadow-2xl border-4 border-white/20">
-      <iframe class="w-full h-full" src="YTDown.com_YouTube_Juan-Pablo-Duarte-Biografia_Media_OfLGSAezNXw_001_1080p.mp4" title="Duarte" frameborder="0" allowfullscreen></iframe>
+      <iframe class="w-full h-full" src="c:\Users\Ismael J\Desktop\JPD\YTDown.com_YouTube_01-Lo-que-motivo-a-Juan-Pablo-Duarte-a-l_Media_kpHaP0xPO1U_001_1080p.mp4" title="Duarte" frameborder="0" allowfullscreen></iframe>
     </div>
   </div>
 </section>
@@ -340,9 +376,42 @@
     opacity: 0,
     easing: 'ease-in-out'
   });
+
+  // FUNCIÓN 1: BOTÓN IR ARRIBA
+  const topBtn = document.getElementById("scrollToTop");
+  window.onscroll = function() {
+    if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
+      topBtn.style.display = "block";
+    } else {
+      topBtn.style.display = "none";
+    }
+  };
+  topBtn.onclick = function() {
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  };
+
+  // FUNCIÓN 2: CONTADOR PARA EL 26 DE ENERO
+  function updateCountdown() {
+    const now = new Date();
+    let year = now.getFullYear();
+    let birthDate = new Date(year, 0, 26); // Mes 0 es Enero
+
+    if (now > birthDate) {
+      birthDate = new Date(year + 1, 0, 26);
+    }
+
+    const diff = birthDate - now;
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    document.getElementById("countdown").innerText = `Faltan ${days} días para el natalicio de Duarte`;
+  }
+  updateCountdown();
+
+  // FUNCIÓN 3: EFECTO PARALLAX SIMPLE
+  window.addEventListener('scroll', function() {
+    const scroll = window.pageYOffset;
+    document.querySelector('.hero-bg-image').style.transform = `translateY(${scroll * 0.4}px)`;
+  });
 </script>
 
 </body>
-
 </html>
-
