@@ -39,7 +39,6 @@
       left: 0;
       width: 100%;
       height: 100%;
-      /* Reemplaza la ruta de abajo con tu imagen 16:9 */
       background: linear-gradient(rgba(0, 45, 98, 0.7), rgba(10, 10, 10, 0.8)), 
                   url('Juan-Pablo-Duarte-padre-de-la-patria.jpg'); 
       background-size: cover;
@@ -103,7 +102,7 @@
       top: 0;
       left: 0;
       z-index: -1;
-      opacity: 0.5; /* Reducido para que se vea la imagen de fondo */
+      opacity: 0.5; 
     }
 
     @keyframes gradientBG {
@@ -121,6 +120,14 @@
       z-index: 100;
       cursor: pointer;
       transition: 0.3s;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: rgba(255,255,255,0.3);
+      border-radius: 10px;
     }
   </style>
 </head>
@@ -218,21 +225,23 @@
 
 <section id="himno" class="py-24 px-6 bg-blue-900/40 border-y border-white/5">
     <div class="max-w-5xl mx-auto">
-        <h2 class="text-5xl font-extrabold mb-10 text-center">Himno a Juan Pablo Duarte (Completo)</h2>
+        <h2 class="text-5xl font-extrabold mb-10 text-center">Himno a Juan Pablo Duarte</h2>
         <div class="grid md:grid-cols-2 gap-10">
             <div class="glass p-8 rounded-2xl text-center leading-relaxed italic border border-white/20 max-h-[500px] overflow-y-auto custom-scrollbar">
-                <p class="mb-6"><strong>I</strong><br>En la fragua del honor y del deber,<br>donde el alma templó su gran virtud,<br>Juan Pablo Duarte nos vino a enseñar<br>lo que vale una patria en su juventud.</p>
-                <p class="mb-6 font-bold text-yellow-400"><strong>Coro</strong><br>¡Gloria a Duarte! que el nombre nos dio,<br>¡Gloria a Duarte! que el pecho encendió,<br>en el fuego sagrado de la libertad,<br>que en febrero en la patria brilló.</p>
-                <p class="mb-6"><strong>II</strong><br>Él trazó con su fe y su ideal,<br>el camino de la redención,<br>y en la cruz de la enseña nacional,<br>puso el sello de su corazón.</p>
-                <p class="mb-6"><strong>III</strong><br>No fue el oro que da el resplandor,<br>ni el orgullo que busca el altar,<br>fue su vida un ejemplo de amor,<br>fue su meta la patria salvar.</p>
-                <p class="mb-6"><strong>IV</strong><br>Dominicanos, seguid su lección,<br>de justicia, de paz y de honor,<br>que en cada pecho viva su acción,<br>y en cada alma su fe y su fervor.</p>
+                <p class="mb-6">En la fragua de la escuela nuestra patria fue forjada,<br>y al calor de tu enseñanza le infundió vida sagrada.</p>
+                <p class="mb-6">La gloriosa Trinitaria que fundara tu heroísmo<br>fue la cátedra primera de moral y de civismo.</p>
+                <p class="mb-6 font-bold text-yellow-400">Fuerza era que un maestro preparara la conciencia<br>donde habría de nacer la soñada independencia.</p>
+                <p class="mb-6">Y es así como cantamos tus virtudes halla el estro,<br>junto al Padre de la Patria la figura del Maestro.</p>
+                <p class="mb-6">En la escuela se te honra por tus hechos sacrosantos<br>en las letras y las notas encendidas de su canto.</p>
+                <p class="mb-6">Y al honrarte recordamos tu patriótico heroísmo,<br>es al prócer y al maestro que los dos son uno mismo.</p>
+                <p class="mb-6">La Bandera dice Patria y al decirlo se revela<br>que es el alma de la patria señalándonos la escuela.</p>
             </div>
             <div class="flex flex-col justify-center">
                 <h3 class="text-3xl font-bold mb-4">Análisis del Himno</h3>
-                <p class="mb-4 opacity-90 text-lg">Letra de <strong>Ramón Emilio Jiménez</strong> y música de <strong>José de Jesús Ravelo</strong>.</p>
+                <p class="mb-4 opacity-90 text-lg">Este himno resalta la dualidad de Duarte como <strong>libertador y educador</strong>.</p>
                 <ul class="space-y-4">
-                    <li class="bg-white/5 p-4 rounded-lg italic border-l-4 border-blue-500">"La fragua del honor": Se refiere al proceso de forjar el carácter nacional mediante el sacrificio.</li>
-                    <li class="bg-white/5 p-4 rounded-lg italic border-l-4 border-red-500">"Trazó con su fe": Destaca que la independencia no fue un accidente, sino un plan intelectual diseñado por Duarte.</li>
+                    <li class="bg-white/5 p-4 rounded-lg italic border-l-4 border-blue-500">"La fragua de la escuela": La educación como el lugar donde se construye la verdadera libertad.</li>
+                    <li class="bg-white/5 p-4 rounded-lg italic border-l-4 border-red-500">"Prócer y maestro": Reconoce que su legado no solo fue militar o político, sino moral e intelectual.</li>
                 </ul>
             </div>
         </div>
@@ -356,7 +365,7 @@
   <div class="max-w-5xl mx-auto">
     <h2 class="text-5xl font-extrabold mb-10">Documental Educativo</h2>
     <div class="aspect-video rounded-3xl overflow-hidden shadow-2xl border-4 border-white/20">
-      <iframe class="w-full h-full" src="YTDown.com_YouTube_01-Lo-que-motivo-a-Juan-Pablo-Duarte-a-l_Media_kpHaP0xPO1U_001_1080p.mp4" title="Duarte" frameborder="0" allowfullscreen></iframe>
+      <iframe class="w-full h-full" src="YTDown.com_YouTube_Juan-Pablo-Duarte-Biografia_Media_OfLGSAezNXw_001_1080p.mp4" title="Duarte" frameborder="0" allowfullscreen></iframe>
     </div>
   </div>
 </section>
@@ -377,7 +386,6 @@
     easing: 'ease-in-out'
   });
 
-  // FUNCIÓN 1: BOTÓN IR ARRIBA
   const topBtn = document.getElementById("scrollToTop");
   window.onscroll = function() {
     if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
@@ -390,11 +398,10 @@
     window.scrollTo({top: 0, behavior: 'smooth'});
   };
 
-  // FUNCIÓN 2: CONTADOR PARA EL 26 DE ENERO
   function updateCountdown() {
     const now = new Date();
     let year = now.getFullYear();
-    let birthDate = new Date(year, 0, 26); // Mes 0 es Enero
+    let birthDate = new Date(year, 0, 26);
 
     if (now > birthDate) {
       birthDate = new Date(year + 1, 0, 26);
@@ -406,7 +413,6 @@
   }
   updateCountdown();
 
-  // FUNCIÓN 3: EFECTO PARALLAX SIMPLE
   window.addEventListener('scroll', function() {
     const scroll = window.pageYOffset;
     document.querySelector('.hero-bg-image').style.transform = `translateY(${scroll * 0.4}px)`;
@@ -415,4 +421,3 @@
 
 </body>
 </html>
-
