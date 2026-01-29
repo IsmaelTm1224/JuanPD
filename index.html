@@ -129,6 +129,15 @@
       background: rgba(255,255,255,0.3);
       border-radius: 10px;
     }
+
+    /* Animación extra para el ecualizador de audio */
+    @keyframes barBounce {
+      0%, 100% { height: 10px; }
+      50% { height: 40px; }
+    }
+    .audio-bar {
+      animation: barBounce 1s ease-in-out infinite;
+    }
   </style>
 </head>
 
@@ -246,6 +255,46 @@
             </div>
         </div>
     </div>
+</section>
+
+<section id="audio-himno" class="py-16 px-6">
+  <div class="max-w-4xl mx-auto">
+      <div class="card bg-gradient-to-r from-blue-900/60 to-red-900/60 border-2 border-white/20 relative overflow-hidden">
+          
+          <div class="absolute bottom-0 left-0 right-0 flex justify-center items-end gap-2 opacity-20 h-32">
+              <div class="bg-white w-3 audio-bar" style="animation-delay: 0.1s"></div>
+              <div class="bg-white w-3 audio-bar" style="animation-delay: 0.3s"></div>
+              <div class="bg-white w-3 audio-bar" style="animation-delay: 0.5s"></div>
+              <div class="bg-white w-3 audio-bar" style="animation-delay: 0.2s"></div>
+              <div class="bg-white w-3 audio-bar" style="animation-delay: 0.4s"></div>
+              <div class="bg-white w-3 audio-bar" style="animation-delay: 0.6s"></div>
+          </div>
+
+          <div class="relative z-10 text-center py-6">
+              <div class="inline-block p-5 rounded-full bg-yellow-400/20 mb-6 shadow-[0_0_20px_rgba(250,204,21,0.3)]">
+                  <i data-feather="music" class="text-yellow-400 w-10 h-10"></i>
+              </div>
+              <h3 class="text-4xl font-black mb-2 text-white uppercase tracking-tighter">Audio del Himno</h3>
+              <p class="text-blue-100 mb-10 font-light italic">Siente las notas de nuestra identidad nacional</p>
+              
+              <div class="bg-black/60 p-8 rounded-3xl backdrop-blur-xl border border-white/10 shadow-2xl max-w-2xl mx-auto">
+                  <audio controls class="w-full h-12">
+                      <source src="yt1s.com - Himno A Juan Pablo Duarte  Coro Infantil Ángeles Cantores.mp3" type="audio/mpeg">
+                      Tu navegador no soporta la reproducción de audio.
+                  </audio>
+                  
+                  <div class="flex justify-between mt-4 px-2">
+                    <a href="c:\Users\Ismael J\Desktop\JPD\yt1s.com - Himno A Juan Pablo Duarte  Coro Infantil Ángeles Cantores.mp3" download class="flex items-center gap-2 text-xs text-yellow-400 hover:text-white transition">
+                      <i data-feather="download" class="w-4"></i> Descargar Himno
+                    </a>
+                    <span class="text-[10px] uppercase tracking-widest opacity-50 flex items-center gap-1">
+                      <i data-feather="headphones" class="w-3"></i> Stereo High Quality
+                    </span>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
 </section>
 
 <section id="pensamientos" class="py-24 px-6">
